@@ -61,7 +61,6 @@ x-quorum-def:
       geth \
         --identity node$${NODE_ID}-${QUORUM_CONSENSUS:-istanbul} \
         --datadir $${DDIR} \
-        --permissioned \
         --nodiscover \
         --verbosity 5 \
         --networkid $${NETWORK_ID} \
@@ -72,7 +71,6 @@ x-quorum-def:
         --rpcport 8545 \
         --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,${QUORUM_CONSENSUS:-istanbul} \
         --port 21000 \
-        --unlock 0 \
         --password /examples/passwords.txt \
         ${QUORUM_GETH_ARGS:-} $${GETH_ARGS_${QUORUM_CONSENSUS:-istanbul}}
 x-tx-manager-def:
